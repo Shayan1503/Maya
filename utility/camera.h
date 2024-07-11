@@ -19,7 +19,7 @@ public:
     vec3 vup = vec3(0, 1, 0);          // Camera-relative "up" direction
 
     double defocus_angle = 0; // Variation angle of rays through each pixel
-    double focus_dist = 10;   // Distance from camera lookfrom point to plane of perfect focuse
+    double focus_dist = 10;   // Distance from camera lookfrom point to plane of perfect focus
 
     void render(const hittable &world)
     {
@@ -138,15 +138,13 @@ private:
             {
                 return attenuation * ray_color(scattered, depth - 1, world);
             }
-            else
-            {
-                return color(0, 0, 0);
-            }
+
+            return color(0, 0, 0);
         }
 
         vec3 unit_direction = unit_vector(r.direction());
         auto a = 0.5 * (unit_direction.y() + 1.0);
-        return (1.0 - a) * color(1.0, 1.0, 1.0) + a * color(0.5, 0.7, 1);
+        return (1.0 - a) * color(1.0, 1.0, 1.0) + a * color(0.5, 0.7, 1.0);
     }
 };
 
