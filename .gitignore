@@ -14,3 +14,7 @@ _deps
 build/*
 
 .vscode
+
+images/*
+
+.prettierrc
