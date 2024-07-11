@@ -40,7 +40,7 @@ public:
 
     double length() const
     {
-        return std::sqrt(length_squared());
+        return sqrt(length_squared());
     }
 
     double length_squared() const
@@ -52,7 +52,7 @@ public:
     {
         // Return true if the vector is close to zero in all dimensions.
         auto s = 1e-8;
-        return (std::fabs(e[0]) < s) && (fabs(e[1]) < s) && (fabs(e[2]) < s);
+        return (fabs(e[0]) < s) && (fabs(e[1]) < s) && (fabs(e[2]) < s);
     }
 
     static vec3 random()
@@ -111,7 +111,7 @@ inline double dot(const vec3 &u, const vec3 &v)
     return u.e[0] * v.e[0] + u.e[1] * v.e[1] + u.e[2] * v.e[2];
 }
 
-inline vec3 cross(const vec3 &v, const vec3 &u)
+inline vec3 cross(const vec3 &u, const vec3 &v)
 {
     return vec3(u.e[1] * v.e[2] - u.e[2] * v.e[1],
                 u.e[2] * v.e[0] - u.e[0] * v.e[2],
